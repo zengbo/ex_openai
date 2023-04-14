@@ -9,6 +9,7 @@ defmodule ExOpenAI.Config do
   @openai_url "https://api.openai.com/v1"
 
   @config_keys [
+		:api_url,
     :api_key,
     :organization_key,
     :http_options
@@ -31,7 +32,7 @@ defmodule ExOpenAI.Config do
   def org_key, do: get_config_value(:organization_key)
 
   # API Url
-  def api_url, do: @openai_url
+  def api_url, do: get_config_value(:api_url, @openai_url)
 
   # HTTP Options
   def http_options, do: get_config_value(:http_options, [])
